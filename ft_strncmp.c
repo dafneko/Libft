@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
+#include <stdlib.h>
 int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
     while (*s1 && *s2 && n > 0)
@@ -26,6 +25,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
     return ((unsigned char)*s1 - (unsigned char)*s2);
 }
 
+/*
 #include <stdio.h>
 int main()
 {
@@ -35,3 +35,4 @@ int main()
     printf("%i\n", ft_strncmp(s1, s2, size));
     printf("%i\n", strncmp(s1, s2, size));
 }
+*/

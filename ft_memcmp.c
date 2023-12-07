@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
+
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
     unsigned const char *str1;
@@ -31,6 +31,7 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     return ((unsigned char)*str1 - (unsigned char)*str2);
 }
 
+/*
 int main()
 {
     const void *s1 = "";
@@ -39,3 +40,4 @@ int main()
     printf("%i\n", ft_memcmp(s1, s2, n));
     printf("%i\n", memcmp(s1, s2, n));
 }
+*/

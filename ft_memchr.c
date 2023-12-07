@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
+
 void *ft_memchr(const void *s, int c, size_t n)
 {
     unsigned const char *str;
@@ -29,6 +29,7 @@ void *ft_memchr(const void *s, int c, size_t n)
     return (NULL);
 }
 
+/*
 #include <stdio.h>
 int main()
 {
@@ -38,3 +39,4 @@ int main()
     printf("%s\n", (char *)ft_memchr(s, c, n));
     printf("%s\n", (char *)memchr(s, c,n));
 }
+*/

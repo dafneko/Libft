@@ -9,7 +9,9 @@
 /*   Updated: 2023/12/05 20:44:20 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdlib.h>
+
 char *ft_strchr(const char *s, int c)
 {
     while ((*s++))
@@ -17,5 +19,5 @@ char *ft_strchr(const char *s, int c)
         if (*s == c)
             return ((char *)s);
     }
-    return (NULL);
+    return (0);
 }

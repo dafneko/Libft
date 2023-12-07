@@ -37,6 +37,7 @@ int ft_atoi(const char *nptr)
     return (n);
 }
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int main()
@@ -45,3 +46,4 @@ int main()
     printf("%d\n", ft_atoi(npt));
     printf("%d\n", atoi(npt));
 }
+*/

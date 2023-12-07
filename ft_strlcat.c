@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <strings.h>
 
 size_t ft_strlen(const char *s)
 {
@@ -41,6 +40,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
     *dst = '\0';
     return (slen + dlen);
 }
+
 /*
 #include <stdio.h>
 int main()
