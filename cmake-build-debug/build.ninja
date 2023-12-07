@@ -49,14 +49,14 @@ cmake_ninja_workdir = /Users/mac/Documents/Coreprojects/cmake-build-debug/
 
 build cmake_object_order_depends_target_Coreprojects: phony || CMakeFiles/Coreprojects.dir
 
-build CMakeFiles/Coreprojects.dir/ft_bzero.c.o: C_COMPILER__Coreprojects_unscanned_Debug /Users/mac/Documents/Coreprojects/ft_bzero.c || cmake_object_order_depends_target_Coreprojects
-  DEP_FILE = CMakeFiles/Coreprojects.dir/ft_bzero.c.o.d
+build CMakeFiles/Coreprojects.dir/ft_strlcat.c.o: C_COMPILER__Coreprojects_unscanned_Debug /Users/mac/Documents/Coreprojects/ft_strlcat.c || cmake_object_order_depends_target_Coreprojects
+  DEP_FILE = CMakeFiles/Coreprojects.dir/ft_strlcat.c.o.d
   FLAGS = -g -std=gnu11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Coreprojects.dir
   OBJECT_FILE_DIR = CMakeFiles/Coreprojects.dir
 
-build CMakeFiles/Coreprojects.dir/ft_memset.c.o: C_COMPILER__Coreprojects_unscanned_Debug /Users/mac/Documents/Coreprojects/ft_memset.c || cmake_object_order_depends_target_Coreprojects
-  DEP_FILE = CMakeFiles/Coreprojects.dir/ft_memset.c.o.d
+build CMakeFiles/Coreprojects.dir/ft_strnstr.c.o: C_COMPILER__Coreprojects_unscanned_Debug /Users/mac/Documents/Coreprojects/ft_strnstr.c || cmake_object_order_depends_target_Coreprojects
+  DEP_FILE = CMakeFiles/Coreprojects.dir/ft_strnstr.c.o.d
   FLAGS = -g -std=gnu11 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Coreprojects.dir
   OBJECT_FILE_DIR = CMakeFiles/Coreprojects.dir
@@ -69,7 +69,7 @@ build CMakeFiles/Coreprojects.dir/ft_memset.c.o: C_COMPILER__Coreprojects_unscan
 #############################################
 # Link the executable Coreprojects
 
-build Coreprojects: C_EXECUTABLE_LINKER__Coreprojects_Debug CMakeFiles/Coreprojects.dir/ft_bzero.c.o CMakeFiles/Coreprojects.dir/ft_memset.c.o
+build Coreprojects: C_EXECUTABLE_LINKER__Coreprojects_Debug CMakeFiles/Coreprojects.dir/ft_strlcat.c.o CMakeFiles/Coreprojects.dir/ft_strnstr.c.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/Coreprojects.dir
   POST_BUILD = :

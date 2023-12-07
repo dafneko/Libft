@@ -1,4 +1,4 @@
 # ninja log v5
-1	103	1701642324433844936	CMakeFiles/Coreprojects.dir/ft_memset.c.o	42e6f2bd20199209
-16	578	1701699115859040783	CMakeFiles/Coreprojects.dir/ft_bzero.c.o	5cdd4b9b16bcc4db
-18	591	1701699115858928876	CMakeFiles/Coreprojects.dir/ft_memset.c.o	42e6f2bd20199209
+2	89	1701881745518682858	CMakeFiles/Coreprojects.dir/ft_memset.c.o	42e6f2bd20199209
+89	179	1701881745607287372	Coreprojects	511a6f014d322e77
+1	89	1701881745518676202	CMakeFiles/Coreprojects.dir/ft_bzero.c.o	5cdd4b9b16bcc4db

@@ -11,30 +11,46 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <strings.h>
 
 size_t ft_strlen(const char *s)
 {
     size_t  i;
 
     i = 0;
-    while(*s)
+    while(*s++)
         i++;
     return(i);
 }
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t slength;
+    size_t slen;
+    size_t dlen;
 
-    slength = ft_strlen(src);
-    if (!size)
-        return (slength + size);
-    while (*dst)
-        dst++;
-    while ((*src) && size--)
-        *dst++ = *src++;
+    slen = ft_strlen(src);
+    dlen = ft_strlen(dst);
+    if ((!dst || !src)) // check if there is space or if they exist
+        return (0); // if not then it doesn't run
+    if (dlen >= size)
+        return (slen + size);
+    while ((*dst) && --size > 0)
+          dst++;
+    while ((*src) && size-- > 1)
+             *dst++ = *src++;
     *dst = '\0';
-    return (slength + size);
+    return (slen + dlen);
 }
+/*
+#include <stdio.h>
+int main()
+{
+    const char *s = "dnsad3848--";
+    char *d = "aahahah";
+    size_t n = 20;
+    printf("%zu\n", strlcat(d, s, n));
+    printf("%zu", ft_strlcat(d, s,n));
+}
+*/
 
 

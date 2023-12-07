@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 23:32:27 by dkoca             #+#    #+#             */
-/*   Updated: 2023/11/17 23:34:12 by dkoca            ###   ########.fr       */
+/*   Created: 2023/12/05 20:44:20 by dkoca             #+#    #+#             */
+/*   Updated: 2023/12/05 20:44:20 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
-
-size_t ft_strlen(const char *s)
+#include <stdlib.h>
+char *ft_strchr(const char *s, int c)
 {
-    size_t  i;
-
-    i = 0;
-    while(*s++)
-        i++;
-    return(i);
+    while ((*s++))
+    {
+        if (*s == c)
+            return ((char *)s);
+    }
+    return (NULL);
 }

@@ -93,13 +93,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ft_bzero.c",
+			"path" : "ft_strlcat.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "ft_memset.c",
+			"path" : "ft_strnstr.c",
 			"sourceGroupIndex" : 0
 		}
 	],
