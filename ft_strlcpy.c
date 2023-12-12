@@ -12,16 +12,6 @@
 
 #include "libft.h"
 
-size_t ft_strlen(const char *s)
-{
-    size_t  i;
-
-    i = 0;
-    while(*s)
-        i++;
-    return(i);
-}
-
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
     size_t slength;
@@ -29,7 +19,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
     slength = ft_strlen(src);
     if (!size) // boolean check if size exists
         return (slength);
-    size -= 1; //
+    size -= 1;
     while ((*src) && size--)
         *dst++ = *src++;
     *dst = '\0';

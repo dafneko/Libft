@@ -45,11 +45,10 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 #include <strings.h>
 int main()
 {
-    char    *str = "i did not expect this";
+    char    *str = "abcdefghij";
     char    buf[21];
 
-    bzero(buf, 21);
-    printf("%s\n", (char *)ft_memmove(buf, str, 20));
-    printf("%s\n", (char *)memcpy(buf, str, 4));
+    //printf("%s\n", (char *)ft_memmove(str+ 3, str, 5));
+    printf("%s\n", (char *)memmove(str + 3, str, 5));
 }
- */
+*/

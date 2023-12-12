@@ -67,7 +67,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="C/C++ File.ft_strtrim.c">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -79,8 +79,19 @@
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ft_strtrim.c" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Coreprojects" TARGET_NAME="ft_strtrim.c" CONFIG_NAME="ft_strtrim.c">
+      <option name="sourceFile" value="ft_strtrim.c" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="C/C++ File.ft_strtrim.c" />
+      <item itemvalue="C/C++ File.ft_strlcat.c" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="C/C++ File.ft_strtrim.c" />
         <item itemvalue="C/C++ File.ft_strlcat.c" />
       </list>
     </recent_temporary>
@@ -97,7 +108,7 @@
       <workItem from="1701613400986" duration="482000" />
       <workItem from="1701613969786" duration="564000" />
       <workItem from="1701614965244" duration="13294000" />
-      <workItem from="1701693122036" duration="55992000" />
+      <workItem from="1701693122036" duration="102568000" />
     </task>
     <servers />
   </component>

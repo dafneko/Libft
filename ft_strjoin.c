@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 20:44:20 by dkoca             #+#    #+#             */
-/*   Updated: 2023/12/05 20:44:20 by dkoca            ###   ########.fr       */
+/*   Created: 2023/12/09 23:49:11 by dkoca             #+#    #+#             */
+/*   Updated: 2023/12/09 23:49:11 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char *ft_strjoin(char const *s1, char const *s2)
 {
-    while (*s)
-    {
-        if (*s == c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
+    char *new;
+    size_t size;
+
+    size = ft_strlen(s1) + ft_strlen(s2) + 1;
+    new = malloc(size);
+    if (!new)
+        return (0);
+    new[0] = 0;
+    ft_strlcpy(new, s1, ft_strlen(s1));
+    ft_strlcat(new, s2,size);
+    return (new);
 }
+
 /*
-#include <stdio.h>
 int main()
 {
-    const char *s = "+-*";
-    int c = '+';
-    printf("%s", ft_strchr(s, c));
-
+    char const *s1 = "Hello,";
+    char const *s2 = " World!";
+    printf("%s", ft_strjoin(s1, s2));
 }
  */

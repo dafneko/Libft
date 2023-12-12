@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 20:44:20 by dkoca             #+#    #+#             */
-/*   Updated: 2023/12/05 20:44:20 by dkoca            ###   ########.fr       */
+/*   Created: 2023/12/08 22:10:31 by dkoca             #+#    #+#             */
+/*   Updated: 2023/12/08 22:10:31 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
-{
-    while (*s)
-    {
-        if (*s == c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
-}
-/*
-#include <stdio.h>
-int main()
-{
-    const char *s = "+-*";
-    int c = '+';
-    printf("%s", ft_strchr(s, c));
+#include "libft.h"
 
+void *ft_calloc(size_t count, size_t size)
+{
+    unsigned char *m;
+    size_t i;
+
+    i = 0;
+    m = malloc(count * size);
+    if (!m)
+        return (0);
+
+    while (i < count * size)
+    {
+        m[i] = 0;
+        i++;
+    }
+    return (m);
 }
- */
