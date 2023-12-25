@@ -11,19 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    size_t length;
-    size_t i;
+	size_t	length;
+	size_t	i;
 
-    length = ft_strlen(s);
-    i = 0;
-    while (s[length - i])
-    {
-        if (s[length] == c)
-            return ((char *)s);
-        i++;
-    }
-    return (0);
+	i = 0;
+	length = ft_strlen(s);
+	if ((char)c == '\0')
+	{
+		return ((char *)(&s[length]));
+	}
+	while (s[length - i - 1] && (s + length - i - 1) >= s)
+	{
+		if (s[length - i - 1] == (char)c)
+			return ((char *)&s[length - i - 1]);
+		i++;
+	}
+	return (0);
 }
+
+// int main(void)
+
+// {
+// 	char *str = "teste";
+// 	printf("%p\n", &str[5]);
+// 	printf("My strrchr %p\n",ft_strrchr(str, 1024));
+// 	printf("Real strrchr %p\n",strrchr(str, 1024));
+
+// }

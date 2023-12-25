@@ -12,89 +12,89 @@
 
 #include "libft.h"
 
-void words_in_arr(char **arr, char *s, char c)
+static char	**ft_free(char **arr, size_t n, char *start, size_t size)
 {
-    size_t i;
-    size_t k;
-    size_t n;
-    size_t j;
-
-    i = 0;
-    k = 0;
-    n = 0;
-    j = 0;
-    while (arr[i][k])
-    {
-        if (s[n + j] != c)
-        {
-            /*
-            arr[i][k] = s[n + j];
-            n++;
-            k++;
-             */
-            ft_strlcpy(&arr[i][k], &s[n + j], n);
-            while (s[n + j] == c)
-                j++;
-        }
-        i++;
-    }
+	if (!arr)
+	{
+		return (NULL);
+		while (n--)
+		{
+			free(arr[n]);
+			arr[n] = NULL;
+		}
+		free(arr);
+	}
+	ft_strlcpy(arr[n], start, size);
+	return (arr);
 }
 
-static size_t count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
-    size_t i;
-    size_t k;
+	size_t	word_count;
+	size_t	found;
 
-    i = 0;
-    k = 0;
-    // if c is in the beginning or the end (strtrim takes care of that)
-    // or if there are multiple in a row (the second loop handles it)
-    while (s[i + k])
-    {
-        if (s[i + k] == c)
-        {
-            i++;
-            while (s[i + k] == c)
-                k++;
-        }
-        k++;
-    }
-    return (i + 1);
+	word_count = 0;
+	found = 0;
+	while (*s)
+	{
+		if (*s != c && found == 0)
+		{
+			found = 1;
+			word_count++;
+		}
+		else if (*s == c && found == 1)
+			found = 0;
+		s++;
+	}
+	return (word_count);
 }
 
-
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    // count words + 1 for the null
-    //malloc count words in double array
-    //loop words in array
-    char **array;
-    char *str;
-    size_t i;
-    size_t k;
+	char	**array;
+	size_t	len;
+	size_t	i;
+	char	*start;
 
-    i = 0;
-    k = 0;
-    if (!s || !c)
-        return (0);
-    str = ft_strtrim(s,  &c);
-    array = malloc(sizeof(char *) * (count_words(str, c) + 1));
-    if (!array)
-        return (0);
-
-
+	if (!s)
+		return (0);
+	len = (count_words(s, c) + 1);
+	array = ft_calloc(len, sizeof(*array));
+	if (!array)
+		return (0);
+	i = -1;
+	while (*s && ++i < len)
+	{
+		while (*s == c && *s)
+			s++;
+		if (!*s)
+			break ;
+		start = (char *)s;
+		while (*s != c && *s)
+			s++;
+		array[i] = ft_calloc((size_t)(s - start + 1), sizeof(**array));
+		ft_free(array, i, start, (size_t)(s - start + 1));
+	}
+	return (array);
 }
 
-
-
-
-#include <stdio.h>
-int main()
-{
-    char **arr;
-    char const *s = "   Hi Dafne how are you Bye   ";
-    char c = ' ';
-    printf("%zu", count_words(ft_strtrim(s, &c), c));
-    printf()
-
-}
+// #include <stdio.h>
+// int main()
+// {
+//     char **arr;
+//     char *s = "hello!";
+//     char c = ' ';
+// 	int i;
+// 	arr = ft_split(s, c);
+// 	i = 0;
+// 	while (arr[i])
+// 	{
+// 		if (*arr != NULL)
+// 		{
+// 			free(arr[i]);
+// 			i++;
+// 		}
+// 		*arr = NULL;
+// 	}
+// 	free(arr);
+// }

@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 23:49:11 by dkoca             #+#    #+#             */
-/*   Updated: 2023/12/09 23:49:11 by dkoca            ###   ########.fr       */
+/*   Created: 2023/12/15 18:21:02 by dkoca             #+#    #+#             */
+/*   Updated: 2023/12/15 18:21:04 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*new;
-	size_t	size;
-
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	new = ft_calloc(size, sizeof(char));
-	if (!new)
-		return (0);
-	ft_strlcpy(new, s1, ft_strlen(s1) + 1);
-	ft_strlcat(new, s2, size);
-	return (new);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+	}
+	else if (0 > n)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
 }
 
 // int main()
 // {
-//     char const *s1 = "Hello";
-//     char const *s2 = "World!";
-//     printf("%s", ft_strjoin(s1, s2));
+// 	long int n = 2147483648;
+// 	int fd = 1;
+// 	ft_putnbr_fd((long int)n, fd);
 // }

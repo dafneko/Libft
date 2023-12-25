@@ -11,30 +11,35 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    char *sub;
 
-    if (!s)
-        return (0);
-    if (ft_strlen(s) < start)
-        return (ft_strdup(""));
-    if (len > ft_strlen(s + start))
-        len = ft_strlen(s + start);
-    sub = ft_calloc(len + 1, sizeof(char));
-    if (!sub)
-        return (0);
-    ft_strlcpy(sub, &s[start], len + 1);
-    return (sub);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*sub;
+
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	sub = ft_calloc(len + 1, sizeof(char));
+	if (!sub)
+		return (0);
+	ft_strlcpy(sub, &s[start], len + 1);
+	return (sub);
 }
 
 /*
  #include <stdio.h>
-int main()
+int	main(void)
 {
-    char const *s = "djaskh";
-    unsigned int start = 6;
-    size_t len = 20;
-    printf("%s", ft_substr(s, start, len));
+	char const		*s;
+	unsigned int	start;
+	size_t			len;
+
+	s = "djaskh";
+	start = 6;
+	len = 20;
+	printf("%s", ft_substr(s, start, len));
 }
  */

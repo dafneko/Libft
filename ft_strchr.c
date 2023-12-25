@@ -10,23 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    while (*s)
-    {
-        if (*s == c)
-            return ((char *)s);
-        s++;
-    }
-    return (0);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (0);
 }
-/*
-#include <stdio.h>
-int main()
-{
-    const char *s = "+-*";
-    int c = '+';
-    printf("%s", ft_strchr(s, c));
 
-}
- */
+// #include <stdio.h>
+// #include <string.h>
+// int	main(void)
+// {
+// 	const char	*s = "teste";
+// 	int			c;
+
+// 	c = '\0';
+// 	//printf("%s", ft_strchr(s, c));
+// 	printf("%s", strchr(s, c));
+
+// }

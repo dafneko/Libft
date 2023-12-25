@@ -12,27 +12,30 @@
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char *p;
+	char	*p;
 
-    p = s;
-    while (n > 0)
-    {
-        *p = '\0';
-        p++;
-        n--;
-    }
+	p = s;
+	while (n > 0)
+	{
+		*p = '\0';
+		p++;
+		n--;
+	}
 }
 
 /*
-int main(void)
+int	main(void)
 {
-    size_t n = 5;
-    void *s = malloc(sizeof(char) * 5);
-    printf("%s", (char *)s);
-    ft_bzero(s, n);
-    printf("%s", (char *)s);
-    printf("%s", (char *)bzero(s, n));
+	size_t	n;
+	void	*s;
+
+	n = 5;
+	s = malloc(sizeof(char) * 5);
+	printf("%s", (char *)s);
+	ft_bzero(s, n);
+	printf("%s", (char *)s);
+	printf("%s", (char *)bzero(s, n));
 }
 */

@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkoca <dkoca@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 23:19:33 by dkoca             #+#    #+#             */
-/*   Updated: 2023/12/23 20:03:21 by dkoca            ###   ########.fr       */
+/*   Created: 2023/12/16 00:57:06 by dkoca             #+#    #+#             */
+/*   Updated: 2023/12/16 00:57:07 by dkoca            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	return (c >= 32 && c < 127);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

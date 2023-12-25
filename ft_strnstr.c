@@ -11,44 +11,40 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-char *ft_strnstr(const char *big, const char *little, size_t len)
-{
-    size_t i;
-    size_t j;
 
-    i = 0;
-    j = 0;
-    if (!little || *little == '\0')
-        return ((char *)big);
-    while (len > 0 && big[i] && little[j])
-    {
-       if (big[i] != little[j])
-       {
-           i++;
-           len--;
-       }
-        j = 0;
-       while (big[i + j] == little[j] && len > 0)
-       {
-               j++;
-               if (little[j] == '\0')
-                   return ((char *) big + i); // this is the same as return ((char *)&big[i]); and ((char *)(&(*(big + i))))
-               len--;
-       }
-    }
-    return (0);
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (*little == '\0')
+		return ((char *)big);
+	while (len > i && big[i])
+	{
+		j = 0;
+		while (big[i + j] == little[j] && len > i + j)
+		{
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
 
-/*
-#include <strings.h>
-#include <stdio.h>
-int main()
-{
-    const char *big = NULL;
-    const char *little = "brown";
-    size_t n = 0;
-    printf("%s\n", ft_strnstr(big, little, n));
-    printf("%s\n", strnstr(big, little, n));
+	/* big + i is the same as return ((char *)&big[i]); and ((char *)(&(*(big
+						+ i)))) */
 
-}
-*/
+// #include <strings.h>
+// #include <string.h>
+// int main()
+// {
+//     const char *big = "aaabcabcd";
+//     const char *little = "abcd";
+//     size_t n = 9;
+//     printf("%s\n", ft_strnstr(big, little, n));
+//    // printf("%s\n", strnstr(big, little, n));
+
+// }
